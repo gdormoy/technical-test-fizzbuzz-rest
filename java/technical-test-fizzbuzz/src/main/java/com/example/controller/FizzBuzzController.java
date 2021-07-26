@@ -19,16 +19,20 @@ public class FizzBuzzController {
     {
         List<String> result = new ArrayList<>();
         for (Integer i = 1; i <= limit; i++) {
-            if (i % int1 == 0 && i % int2 == 0){
+            if (isMultiple(i, int1) && isMultiple(i, int2)){
                 result.add(str1 + str2);
-            } else if (i % int1 == 0) {
+            } else if (isMultiple(i, int1)) {
                 result.add(str1);
-            } else if (i % int2 == 0) {
+            } else if (isMultiple(i, int2)) {
                 result.add(str2);
             } else {
                 result.add(String.valueOf(i));
             }
         }
         return result;
+    }
+
+    public boolean isMultiple(Integer number, Integer compare){
+        return number % compare == 0;
     }
 }
