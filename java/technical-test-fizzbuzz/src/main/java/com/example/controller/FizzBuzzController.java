@@ -14,6 +14,7 @@ import java.util.List;
 public class FizzBuzzController {
     private static final Logger logger = LoggerFactory.getLogger(FizzBuzzController.class);
 
+    // Endpoint fizzbuzz require all params
     @RequestMapping(value = "/fizzbuzz", method = RequestMethod.GET)
     public List<String> fizzbuzz(@RequestParam Integer int1, Integer int2, Integer limit, String str1, String str2)
     {
@@ -32,6 +33,7 @@ public class FizzBuzzController {
         return result;
     }
 
+    // Function to verify if the number is multiple of compare value
     public boolean isMultiple(Integer number, Integer compare){
         return number % compare == 0;
     }
