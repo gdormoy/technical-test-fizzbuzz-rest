@@ -13,12 +13,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Validated
 public class FizzBuzzController {
     private static final Logger logger = LoggerFactory.getLogger(FizzBuzzController.class);
 
     // Endpoint fizzbuzz with optional parameters
     @RequestMapping(value = "/fizzbuzz", method = RequestMethod.GET)
+    @Validated
     public List<String> fizzbuzz(@RequestParam Optional<Integer> int1, Optional<Integer> int2, Optional<Integer> limit, Optional<String> str1, Optional<String> str2)
     {
         List<String> result = new ArrayList<>();
